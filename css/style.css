@@ -1,0 +1,575 @@
+@font-face {
+	font-family: 'MerriweatherSans-Bold';
+	src: url('../fonts/MerriweatherSans-Bold.eot') format('embedded-opentype');
+	src: url('../fonts/MerriweatherSans-Bold.otf') format('opentype'),
+		url('../fonts/MerriweatherSans-Bold.woff') format('woff'),
+		url('../fonts/MerriweatherSans-Bold.ttf') format('truetype'),
+		url('.../fonts/MerriweatherSans-Bold.svg#MerriweatherSans-Bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MerriweatherSans-ExtraBold';
+	src: url('../fonts/MerriweatherSans-ExtraBold.eot') format('embedded-opentype');
+	src: url('../fonts/MerriweatherSans-ExtraBold.otf') format('opentype'),
+		url('../fonts/MerriweatherSans-ExtraBold.woff') format('woff'),
+		url('../fonts/MerriweatherSans-ExtraBold.ttf') format('truetype'),
+		url('.../fonts/MerriweatherSans-ExtraBold.svg#MerriweatherSans-ExtraBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MerriweatherSans-Light';
+	src: url('../fonts/MerriweatherSans-Light.eot') format('embedded-opentype');
+	src: url('../fonts/MerriweatherSans-Light.otf') format('opentype'),
+		url('../fonts/MerriweatherSans-Light.woff') format('woff'),
+		url('../fonts/MerriweatherSans-Light.ttf') format('truetype'),
+		url('.../fonts/MerriweatherSans-Light.svg#MerriweatherSans-Light') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MerriweatherSans-Medium';
+	src: url('../fonts/MerriweatherSans-Medium.eot') format('embedded-opentype');
+	src: url('../fonts/MerriweatherSans-Medium.otf') format('opentype'),
+		url('../fonts/MerriweatherSans-Medium.woff') format('woff'),
+		url('../fonts/MerriweatherSans-Medium.ttf') format('truetype'),
+		url('.../fonts/MerriweatherSans-Medium.svg#MerriweatherSans-Medium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MerriweatherSans-Regular';
+	src: url('../fonts/MerriweatherSans-Regular.eot') format('embedded-opentype');
+	src: url('../fonts/MerriweatherSans-Regular.otf') format('opentype'),
+		url('../fonts/MerriweatherSans-Regular.woff') format('woff'),
+		url('../fonts/MerriweatherSans-Regular.ttf') format('truetype'),
+		url('.../fonts/MerriweatherSans-Regular.svg#MerriweatherSans-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MerriweatherSans-SemiBold';
+	src: url('../fonts/MerriweatherSans-SemiBold.eot') format('embedded-opentype');
+	src: url('../fonts/MerriweatherSans-SemiBold.otf') format('opentype'),
+		url('../fonts/MerriweatherSans-SemiBold.woff') format('woff'),
+		url('../fonts/MerriweatherSans-SemiBold.ttf') format('truetype'),
+		url('.../fonts/MerriweatherSans-SemiBold.svg#MerriweatherSans-SemiBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--yellow: #f9ca24;
+}
+
+* {
+	font-family: 'MerriweatherSans-Light';
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	transition: all .2s linear;
+}
+
+*::selection {
+	background: var(--yellow);
+	color: #333;
+}
+
+html {
+	font-size: 62.5%;
+	/*overflow-x:hidden;*/
+	scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+	width: 1.4em;
+}
+
+html::-webkit-scrollbar-track {
+	background: #222;
+}
+
+html::-webkit-scrollbar-thumb {
+	background: var(--yellow);
+}
+
+body {
+	background: #111;
+	/*width:100%;*/
+	overflow-x: hidden;
+	padding-left: 35rem;
+	scroll-behavior: smooth;
+	background-image: url(../images/banner2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	background-attachment: fixed;
+	position: relative;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #111111ed;
+	z-index: -1;
+}
+
+section {
+	min-height: 100vh;
+	padding: 1rem;
+}
+
+.btn {
+	padding: 11px 30px;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 16px;
+	border-radius: 0;
+	text-transform: capitalize;
+	font-family: 'MerriweatherSans-Medium';
+	transition: all .5s ease-in-out;
+}
+
+.btn:hover {
+	background: #f6e930;
+	color: #1a1a1a;
+	transition: all .5s ease-in-out;
+}
+
+.heading {
+	text-align: center;
+	font-size: 52px;
+	margin: 0 32px;
+	padding: 16px;
+	border-bottom: 2px solid #fff4;
+	color: #fff;
+	text-transform: capitalize;
+	font-family: 'MerriweatherSans-SemiBold';
+}
+
+.heading span {
+	color: #f6e930;
+	font-family: 'MerriweatherSans-SemiBold';
+}
+
+/*========================================
+Header Sectiom start here
+========================================*/
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	height: 100%;
+	width: 35rem;
+	/*background: #1a1a1a;*/
+	background: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+	text-align: center;
+	border-right: 4px solid #f6e930;
+}
+
+.header .user img {
+	height: 165px;
+	width: 165px;
+	border-radius: 3%;
+	object-fit: cover;
+	margin-bottom: 16px;
+	border: 11px solid #f6e930;
+}
+
+.header .user .name {
+	font-size: 32px;
+	color: #fff;
+	text-transform: capitalize;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+.header .user .post {
+	font-size: 16px;
+	color: #e7e7e7;
+	text-transform: capitalize;
+	font-family: 'MerriweatherSans-Medium';
+}
+
+.header .navbar {
+	width: 100%;
+}
+
+.header .navbar ul {
+	list-style: none;
+	padding: 16px 50px;
+}
+
+.header .navbar ul li a {
+	display: block;
+	padding: 10px;
+	margin: 16px 0;
+	background: #333;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 2px;
+	text-transform: capitalize;
+	font-family: 'MerriweatherSans-Light';
+	font-weight: 600;
+	transition: all .5s ease-in-out;
+}
+
+.header .navbar ul li a:hover {
+	background: #f6e930;
+	transition: all .5s ease-in-out;
+	color: #1a1a1a;
+}
+
+.logo {
+	width: 35%;
+}
+
+.logo a h1 img {
+	width: 100%;
+}
+
+#menu {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	font-size: 2.5rem;
+	padding: 1rem 1.5rem;
+	z-index: 1000;
+	display: none;
+}
+
+/*========================================
+home  section css start here
+========================================*/
+
+.home {
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	padding: 0 15rem;
+}
+
+.home h3 {
+	font-size: 2.5rem;
+	color: #fff;
+}
+
+.home h1 {
+	font-size: 5rem;
+	color: #fff;
+}
+
+.home h1 span {
+	color: var(--yellow);
+}
+
+.home p {
+	font-size: 18px;
+	color: #eee;
+	padding: 16px 0;
+	text-align: justify;
+	line-height: 30px;
+}
+
+.banner-txt-inner h6 {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 17px;
+	letter-spacing: 1px;
+	margin-top: 15px;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+
+.banner-txt-inner h2 {
+	color: #fff;
+	font-size: 35px;
+	margin-top: 6px;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+.banner-txt-inner h5 {
+	color: #fff;
+	font-size: 28px;
+	margin-top: 7px;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+.banner-txt-inner a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	margin-top: 15px;
+	transition: all .5s ease;
+}
+
+.banner-txt-inner h5 span {
+	color: #F6E930;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+.banner-txt-inner a:hover {
+	transition: all .5s ease;
+	color: #eac305;
+}
+
+/*========================================
+About Sectiom start here
+========================================*/
+
+.about .row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+}
+
+.about .row .info {
+	flex: 1 1 33rem;
+	padding: 2rem 1rem;
+	padding-left: 6rem;
+}
+
+.about .row .info h3 {
+	font-size: 18px;
+	color: #eee;
+	padding: 10px 0;
+	text-transform: capitalize;
+	font-family: 'MerriweatherSans-Light';
+	font-weight: 100;
+}
+
+.about .row .info h3 span {
+	color: #f6e930;
+	padding: 0 8px;
+	font-family: 'MerriweatherSans-Medium';
+}
+
+.about .row .info h3 a {
+	color: #eee;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+.about .row .counter {
+	flex: 1 1 44rem;
+	padding: 1rem 2rem;
+	justify-content: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.about .row .counter .box {
+	width: 170px;
+	background: #07081f;
+	text-align: center;
+	padding: 15px;
+	margin: 15px 15px;
+	position: relative;
+}
+
+.about .row .counter .box::before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 100%;
+	height: 100%;
+	background: #f6e930;
+	z-index: -1;
+}
+
+.about .row .counter .box span {
+	font-size: 4rem;
+	color: var(--yellow);
+}
+
+.about .row .counter .box h3 {
+	font-size: 15px;
+	color: #fff;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+/*========================================
+Education Sectiom start here
+========================================*/
+
+.education .box-container {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+	padding-left: 3rem;
+	flex-wrap: wrap;
+}
+
+.education .box-container .box {
+	width: 350px;
+	margin: 32px 32px;
+	border-left: 4px solid #f6e930;
+	position: relative;
+	background: #333333;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.education .box-container .box span {
+	font-size: 15px;
+	background: #222;
+	color: #fff;
+	border-radius: 3px;
+	padding: 7px 20px;
+}
+
+.education .box-container .box h3 {
+	font-size: 22px;
+	color: #fff;
+	padding-top: 16px;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+.education .box-container .box p {
+	font-size: 15px;
+	color: #eee;
+	margin-top: 3px;
+}
+
+.education .box-container .box i {
+	position: absolute;
+	top: -1.5rem;
+	left: -2.5rem;
+	height: 5rem;
+	width: 5rem;
+	border-radius: 50%;
+	line-height: 5rem;
+	text-align: center;
+	font-size: 1.7rem;
+	color: #fff;
+	background: var(--yellow);
+}
+
+/*========================================
+Portfolio Sectiom start here
+========================================*/
+
+.portfolio .box-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 2rem 0;
+}
+
+.portfolio .box-container .box {
+	height: 155px;
+	width: 28%;
+	border-radius: 0;
+	margin: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	border: 10px solid rgb(51 51 51 / 54%);
+}
+
+.portfolio .box-container .box img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: top;
+	transition: all 2s ease-in-out;
+}
+
+.portfolio .box-container .box:hover img {
+	object-position: bottom;
+	transition: all 2s ease-in-out;
+}
+
+/*========================================
+Contact Sectiom start here
+========================================*/
+
+.contact .row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.contact .row .content {
+	flex: 1 1 30rem;
+	padding: 4rem;
+	padding-bottom: 0;
+}
+
+.contact .row form {
+	flex: 1 1 45rem;
+	padding: 2rem;
+	margin: 2rem;
+	margin-bottom: 4rem;
+}
+
+.contact .row form .box {
+	padding: 1.5rem;
+	margin: 1rem 0;
+	background: #333;
+	color: #fff;
+	text-transform: none;
+	font-size: 1.7rem;
+	width: 100%;
+}
+
+.contact .row form .box::placeholder {
+	text-transform: capitalize;
+}
+
+.contact .row form .message {
+	height: 15rem;
+	resize: none;
+}
+
+.contact .row .content .title {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 30px;
+	padding-bottom: 16px;
+	font-family: 'MerriweatherSans-Regular';
+}
+
+.contact .row .content .info h3 {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	color: #eee;
+	padding: 6px 0;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.contact .row .content .info h3 i {
+	padding-right: 1rem;
+	color: var(--yellow);
+}
