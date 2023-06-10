@@ -387,14 +387,15 @@ About Sectiom start here
 
 .about .row .counter .box {
 	width: 170px;
-	background: #07081f;
+	background: #333333;
 	text-align: center;
 	padding: 15px;
 	margin: 15px 15px;
 	position: relative;
+	border: 1px solid #f6e930f2;
 }
 
-.about .row .counter .box::before {
+/* .about .row .counter .box::before {
 	content: '';
 	position: absolute;
 	top: -5px;
@@ -403,7 +404,7 @@ About Sectiom start here
 	height: 100%;
 	background: #f6e930;
 	z-index: -1;
-}
+} */
 
 .about .row .counter .box span {
 	font-size: 4rem;
