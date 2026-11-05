@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Thoughts &amp; Dinvishesh | Mahesh Sutar</title>
+<script src="theme-init.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="blog">
+<div id="site-nav"></div>
+
+<div class="wrap page-head fade">
+  <div class="eyebrow" id="todayDate"></div>
+  <h1>Daily Thoughts &amp; Dinvishesh</h1>
+  <p class="muted">A thought for the day, and what happened today in the life of Chhatrapati Shivaji Maharaj. Looking for verse? See the <a href="poems.html" style="color:var(--accent);font-weight:600">Poems</a> page.</p>
+</div>
+
+<section style="padding-top:30px">
+  <div class="wrap grid2">
+    <div class="card today" id="din"></div>
+    <div class="card" id="thought"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">Blog</div><h2>Thoughts archive</h2>
+    <div id="posts"></div>
+
+    <div class="card" style="margin-top:26px">
+      <h3 style="margin-bottom:10px">Write today's thought</h3>
+      <input type="text" id="tTitle" placeholder="Title" style="margin-bottom:10px">
+      <textarea id="tText" rows="3" placeholder="What did you learn or think about today?"></textarea>
+      <div class="btns"><button class="btn primary" id="save" type="button">Save thought</button></div>
+      <p class="muted" style="font-size:.82rem;margin-top:10px">Saved in this browser only. To publish for everyone, add it to <code>THOUGHT_POSTS</code> in <code>data.js</code>.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">छत्रपती शिवाजी महाराज</div><h2>दिनविशेष कॅलेंडर</h2>
+    <div class="events" id="events"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+  var t = todayInfo();
+  document.getElementById("todayDate").textContent = t.d.toLocaleDateString("en-IN", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+  document.getElementById("din").innerHTML = dinVisheshHTML();
+  document.getElementById("thought").innerHTML = '<span class="tag">Thought of the day</span><h3 style="margin-top:8px;font-size:1.4rem">' + esc(thoughtOfTheDay()) + "</h3>";
+
+  var KEY = "ms_thoughts";
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
+  function renderPosts() {
+    var mine = load().map(function (p) { return Object.assign({}, p, { mine: true }); });
+    var all = THOUGHT_POSTS.filter(function (p) { return p.date <= t.iso; }).concat(mine).sort(function (a, b) { return b.date.localeCompare(a.date); });
+    document.getElementById("posts").innerHTML = all.map(function (p) {
+      return '<article class="card post"><small>' + esc(p.date) + (p.mine ? " &middot; saved in this browser" : "") + "</small><h3>" + esc(p.title) + "</h3><p>" + esc(p.text) + "</p></article>";
+    }).join("") || "<p class='muted'>No posts yet.</p>";
+  }
+  renderPosts();
+  document.getElementById("save").onclick = function () {
+    var title = document.getElementById("tTitle").value.trim(), text = document.getElementById("tText").value.trim();
+    if (!title || !text) return alert("Please add a title and a thought.");
+    var list = load(); list.push({ date: t.iso, title: title, text: text });
+    try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+    document.getElementById("tTitle").value = ""; document.getElementById("tText").value = ""; renderPosts();
+  };
+
+  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  document.getElementById("events").innerHTML = Object.keys(SHIVAJI_EVENTS).sort().map(function (k) {
+    var e = SHIVAJI_EVENTS[k], m = +k.split("-")[0], d = +k.split("-")[1];
+    return '<div class="ev ' + (k === t.key ? "now" : "") + '"><div class="d">' + d + " " + months[m - 1] + "<small>" + e.year + "</small></div><div><p>" + esc(e.en) + '</p><p class="mr">' + esc(e.mr) + "</p></div></div>";
+  }).join("");
+</script>
+</body>
+</html>
