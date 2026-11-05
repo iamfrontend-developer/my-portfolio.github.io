@@ -1,123 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mahesh Tukaram Sutar | Senior Frontend Developer</title>
-<meta name="description" content="Portfolio of Mahesh Tukaram Sutar, Senior Frontend Developer (React.js, Next.js, JavaScript), Mumbai, India.">
-<script src="theme-init.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body data-page="home">
-<div id="site-nav"></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahesh Tukaram Sutar | Senior Frontend Developer</title>
+    <meta name="description"
+      content="Portfolio of Mahesh Tukaram Sutar, Senior Frontend Developer (React.js, Next.js, JavaScript), Mumbai, India.">
+    <script src="theme-init.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Mukta:wght@400;600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="home">
+    <!-- <div id="site-nav"></div> -->
+    <nav class="site-nav">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">MS<b>.</b></a>
+        <div class="nav-right">
+          <div class="menu" id="menu">
+            <ul class="main">
+              <li><a href="index.html" class="active"
+                  aria-current="page">Home</a></li>
+              <li><a href="index.html#projects">Projects</a></li>
+              <li><a href="index.html#experience">Experience</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <!-- <ul class="more">
+              <li><a href="blog.html">Daily Thoughts</a></li>
+              <li><a href="poems.html">Poems</a></li>
+              <li><a href="practice.html">React Lab</a></li>
+            </ul> -->
+            <div class="actions">
+              <button class="btn sm" type="button" commandfor="cvDialog"
+                command="show-modal">View CV</button>
+            </div>
+          </div>
 
-<header class="hero" id="home">
-  <div class="wrap">
-    <div class="fade">
-      <div class="eyebrow">Hello, I'm</div>
-      <h1>Mahesh Tukaram Sutar</h1>
-      <div class="role"><span id="role"></span><span class="caret"></span></div>
-      <p class="lead">Frontend/UI developer with 6.5+ years of experience building clean, accessible and responsive interfaces with React.js, Next.js and JavaScript. Based in Mumbai, India.</p>
-      <div class="btns">
-        <a class="btn primary" href="cv/Mahesh_Sutar_Resume.pdf" download="Mahesh_Sutar_Resume.pdf">Download CV</a>
-        <button class="btn" type="button" data-cv-open>View CV</button>
-        <a class="btn" href="#projects">View Projects</a>
+          <button class="icon-btn" id="themeBtn" type="button"
+            aria-label="Toggle theme" title="Toggle theme">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"><path
+                d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+          </button>
+
+          <button class="icon-btn burger" id="burger" type="button"
+            aria-label="Open menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+              stroke="currentColor" stroke-width="2"
+              stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
       </div>
-      <div class="stats">
-        <div class="stat"><b>6.5+</b><span>Years experience</span></div>
-        <div class="stat"><b id="projCount">12</b><span>Selected projects</span></div>
-        <div class="stat"><b>3</b><span>Companies</span></div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="wrap">
+        <div class="fade">
+          <div class="eyebrow">Hello, I'm</div>
+          <h1>Mahesh Tukaram Sutar</h1>
+          <div class="role"><span id="role"></span><span
+              class="caret"></span></div>
+          <p class="lead">Frontend/UI developer with 6.5+ years of experience
+            building clean, accessible and responsive interfaces with React.js,
+            Next.js and JavaScript. Based in Mumbai, India.</p>
+          <div class="btns">
+            <a class="btn primary" href="cv/Mahesh_Sutar_Resume.pdf"
+              download="Mahesh_Sutar_Resume.pdf">Download CV</a>
+            <button class="btn" type="button" data-cv-open>View CV</button>
+            <a class="btn" href="#projects">View Projects</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>6.5+</b><span>Years experience</span></div>
+            <div class="stat"><b id="projCount">12</b><span>Selected
+                projects</span></div>
+            <div class="stat"><b>3</b><span>Companies</span></div>
+          </div>
+        </div>
+        <!-- Save your photo in this folder as photo.jpg. Until then, initials are shown. -->
+        <div class="avatar fade"><span>MS</span><img src="photo.jpg"
+            alt="Mahesh Tukaram Sutar" onerror="this.remove()"></div>
       </div>
-    </div>
-    <!-- Save your photo in this folder as photo.jpg. Until then, initials are shown. -->
-    <div class="avatar fade"><span>MS</span><img src="photo.jpg" alt="Mahesh Tukaram Sutar" onerror="this.remove()"></div>
-  </div>
-</header>
+    </header>
 
-<section id="about" style="padding-top:40px">
-  <div class="wrap grid2">
-    <div>
-      <div class="eyebrow">About</div>
-      <h2>Clean, responsive, accessible</h2>
-      <p class="muted">Frontend/UI Developer delivering responsive web interfaces with HTML5, CSS3, JavaScript, jQuery, Bootstrap, Sass/SCSS, Tailwind CSS, React.js and Next.js. I'm seeking opportunities as a Senior Frontend Developer, Senior React Developer, Next.js Developer, Frontend Engineer or UI Engineer.</p>
-      <div class="chips" style="margin-top:18px">
-        <span class="chip">Responsive &amp; pixel-conscious interfaces</span>
-        <span class="chip">Reusable UI components</span>
-        <span class="chip">Cross-browser layouts</span>
-        <span class="chip">Animation &amp; interaction</span>
+    <section id="about" style="padding-top:40px">
+      <div class="wrap grid2">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2>Clean, responsive, accessible</h2>
+          <p class="muted">Frontend/UI Developer delivering responsive web
+            interfaces with HTML5, CSS3, JavaScript, jQuery, Bootstrap,
+            Sass/SCSS, Tailwind CSS, React.js and Next.js. I'm seeking
+            opportunities as a Senior Frontend Developer, Senior React
+            Developer, Next.js Developer, Frontend Engineer or UI Engineer.</p>
+          <div class="chips" style="margin-top:18px">
+            <span class="chip">Responsive &amp; pixel-conscious
+              interfaces</span>
+            <span class="chip">Reusable UI components</span>
+            <span class="chip">Cross-browser layouts</span>
+            <span class="chip">Animation &amp; interaction</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Skills</div>
+          <div class="chips" id="skills" style="margin-top:12px"></div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="eyebrow">Skills</div>
-      <div class="chips" id="skills" style="margin-top:12px"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="projects" style="padding-top:20px">
-  <div class="wrap">
-    <div class="eyebrow">Portfolio</div><h2>Selected projects</h2>
-    <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
-    <div class="projects" id="projects-grid"></div>
-  </div>
-</section>
-
-<section id="experience" style="padding-top:20px">
-  <div class="wrap">
-    <div class="eyebrow">Experience</div><h2>Work history</h2>
-    <div class="job"><small>Aug 2022 &ndash; Present</small><h3>UI Developer</h3><p class="muted">EvolutionCo Digital &amp; Interactive Consultancy Pvt. Ltd., Andheri East, Mumbai</p></div>
-    <div class="job"><small>Feb 2021 &ndash; Jul 2022</small><h3>Web Developer</h3><p class="muted">Transformance Forums, Mira Road East, Mumbai</p></div>
-    <div class="job"><small>Dec 2018 &ndash; Jan 2021</small><h3>Jr. UI Developer</h3><p class="muted">Uneksia, Mulund West, Mumbai</p></div>
-    <p class="muted" style="margin-top:6px">Education: B.A., University of Mumbai &middot; Advanced Web Development Diploma</p>
-  </div>
-</section>
-
-<section style="padding-top:10px">
-  <div class="wrap">
-    <div class="card cv-card">
-      <div><div class="eyebrow">Resume</div><h3 style="margin-top:4px">Want the full details?</h3><p class="muted">View my CV here or download it as a PDF.</p></div>
-      <div class="btns"><button class="btn" type="button" data-cv-open>View CV</button><a class="btn primary" href="cv/Mahesh_Sutar_Resume.pdf" download="Mahesh_Sutar_Resume.pdf">Download CV</a></div>
-    </div>
-  </div>
-</section>
-
-<section id="more" style="padding-top:30px">
-  <div class="wrap">
-    <div class="eyebrow">Beyond the code</div><h2>Thoughts, poems &amp; practice</h2>
-    <div class="grid3">
-      <a href="blog.html" class="card today link-card" id="din"></a>
-      <a href="poems.html" class="card link-card" id="poem"></a>
-      <a href="practice.html" class="card link-card">
-        <span class="tag">React Lab</span>
-        <h3>Practice components</h3>
-        <p class="muted">Live React examples with source code, plus a playground to try your own.</p>
-        <p style="margin-top:10px;color:var(--accent);font-weight:600">Open the lab &rarr;</p>
-      </a>
-    </div>
-    <p style="margin-top:16px"><a href="blog.html" class="muted">Thought of the day: <b id="thoughtText" style="color:var(--head)"></b> &rarr;</a></p>
-  </div>
-</section>
-
-<section id="contact" style="padding-top:10px">
-  <div class="wrap">
-    <div class="card" style="text-align:center">
-      <div class="eyebrow">Contact</div><h2 style="margin-bottom:10px">Let's work together</h2>
-      <p class="muted" style="margin-bottom:18px">Open to Senior Frontend, Senior React, Next.js, Frontend Engineer and UI Engineer roles.</p>
-      <div class="btns" style="justify-content:center;margin-top:0">
-        <a class="btn primary" href="mailto:maheshsutar2505@gmail.com">maheshsutar2505@gmail.com</a>
-        <a class="btn" href="tel:+919404090996">+91 94040 90996</a>
+    <section id="projects" style="padding-top:20px">
+      <div class="wrap">
+        <div class="eyebrow">Portfolio</div><h2>Selected projects</h2>
+        <div class="filters" id="filters" role="group"
+          aria-label="Filter projects"></div>
+        <div class="projects" id="projects-grid"></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div id="site-footer"></div>
+    <section id="experience" style="padding-top:20px">
+      <div class="wrap">
+        <div class="eyebrow">Experience</div><h2>Work history</h2>
+        <div class="job"><small>Aug 2022 &ndash; Present</small><h3>UI
+            Developer</h3><p class="muted">EvolutionCo Digital &amp; Interactive
+            Consultancy Pvt. Ltd., Andheri East, Mumbai</p></div>
+        <div class="job"><small>Feb 2021 &ndash; Jul 2022</small><h3>Web
+            Developer</h3><p class="muted">Transformance Forums, Mira Road East,
+            Mumbai</p></div>
+        <div class="job"><small>Dec 2018 &ndash; Jan 2021</small><h3>Jr. UI
+            Developer</h3><p class="muted">Uneksia, Mulund West,
+            Mumbai</p></div>
+        <p class="muted" style="margin-top:6px">Education: B.A., University of
+          Mumbai &middot; Advanced Web Development Diploma</p>
+      </div>
+    </section>
 
-<script src="data.js"></script>
-<script src="poems.js"></script>
-<script src="site.js"></script>
-<script>
+    <section style="padding-top:10px">
+      <div class="wrap">
+        <div class="card cv-card">
+          <div><div class="eyebrow">Resume</div><h3 style="margin-top:4px">Want
+              the full details?</h3><p class="muted">View my CV here or download
+              it as a PDF.</p></div>
+          <div class="btns"><button class="btn" type="button" data-cv-open>View
+              CV</button><a class="btn primary"
+              href="cv/Mahesh_Sutar_Resume.pdf"
+              download="Mahesh_Sutar_Resume.pdf">Download CV</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="more" style="padding-top:30px;display:none">
+      <div class="wrap">
+        <div class="eyebrow">Beyond the code</div><h2>Thoughts, poems &amp;
+          practice</h2>
+        <div class="grid3">
+          <a href="blog.html" class="card today link-card" id="din"></a>
+          <a href="poems.html" class="card link-card" id="poem"></a>
+          <a href="practice.html" class="card link-card">
+            <span class="tag">React Lab</span>
+            <h3>Practice components</h3>
+            <p class="muted">Live React examples with source code, plus a
+              playground to try your own.</p>
+            <p style="margin-top:10px;color:var(--accent);font-weight:600">Open
+              the lab &rarr;</p>
+          </a>
+        </div>
+        <p style="margin-top:16px"><a href="blog.html" class="muted">Thought of
+            the day: <b id="thoughtText" style="color:var(--head)"></b>
+            &rarr;</a></p>
+      </div>
+    </section>
+
+    <section id="contact" style="padding-top:10px">
+      <div class="wrap">
+        <div class="card" style="text-align:center">
+          <div class="eyebrow">Contact</div><h2 style="margin-bottom:10px">Let's
+            work together</h2>
+          <p class="muted" style="margin-bottom:18px">Open to Senior Frontend,
+            Senior React, Next.js, Frontend Engineer and UI Engineer roles.</p>
+          <div class="btns" style="justify-content:center;margin-top:0">
+            <a class="btn primary"
+              href="mailto:maheshsutar2505@gmail.com">maheshsutar2505@gmail.com</a>
+            <a class="btn" href="tel:+919404090996">+91 94040 90996</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>&copy; 2026 Mahesh Tukaram Sutar &middot; Senior Frontend Developer
+      &middot; Mumbai, India</footer>
+
+    <script src="data.js"></script>
+    <script src="poems.js"></script>
+    <script src="site.js"></script>
+    <script>
   /* ---- role typing animation ---- */
   var roles = ["Senior Frontend Developer","Senior React Developer","Next.js Developer","Frontend Engineer","UI Engineer"];
   var roleEl = document.getElementById("role"), r = 0, c = 0, del = false;
@@ -200,5 +276,5 @@
   document.getElementById("poem").innerHTML = poemCard(pd, { tag: "Poem of the day" }).replace('<div class="verse', '<div style="max-height:9.5em;overflow:hidden" class="verse') + '<p style="margin-top:10px;color:var(--accent);font-weight:600">More poems &rarr;</p>';
   document.getElementById("thoughtText").textContent = thoughtOfTheDay();
 </script>
-</body>
+  </body>
 </html>
